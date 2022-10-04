@@ -1,144 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-    <link rel="stylesheet" href="/CSS/normalize.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Titillium+Web:ital,wght@0,400;1,600&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Titillium+Web:ital,wght@0,400;1,600&display=swap"
+        rel="stylesheet">
 
-   <script src="https://kit.fontawesome.com/aa23e13e05.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/aa23e13e05.js" crossorigin="anonymous"></script>
 
-   <link rel="stylesheet" href="/CSS/progEduc.css">
 
+    <link rel="stylesheet" href="../CSS/progEduc.css">
+
+    <link rel="stylesheet" href="../CSS/normalize.css">
+
+  
+
+
+
+
+    <title>EduMark</title>
 </head>
 
 <body>
-
     <header>
-        <nav class="navegacion-barra">
-          <div class="logo">
-            
-            <img src="/Imagenes/logo-edumark.png" alt="Logo">
-            <p>EDU<span>MARK</span></p>
-    
-          </div>
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Eventos</a></li>
-            <li><a href="#">Programas</a></li>
-            <!--  <li><a href="#">Registrarse</a></li> -->  
-          </ul>
-    
-          <div class="mobile-menu-icon">
-            <div class="hamburger-menu">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
+        <nav>
+            <div class="logo">
+
+                <img src="../Imagenes/logo-edumark.png" alt="Logo">
+                <p>EDU<span>MARK</span></p>
+
             </div>
-          </div>
-        </nav>
-    
-      </header>
+            <ul>
 
-
-
-      <main id="app" class="content">
-        <nav class="nav">
-          <menu class="nav__controls">
-            <icon class="nav__icon" use="#filter"></icon>
-      
-            <li v-for="(active, menu) in menus" class="nav__label"
-              :class="{
-                'nav__label--active' : active,
-                'nav__label--filter': activeFilters[menu].length
-              }" @click="setMenu(menu, active)">
-              {{ menu }}
-            </li>
-      
-            <li class="nav__label nav__label--clear" @click="clearAllFilters">Limpiar</li>
-          </menu>
-        </nav>
-      
-        <transition-group name="dropdown" tag="section" class="dropdown" :style="dropdown">
-          <menu v-for="(options, filter) in filters" class="filters"
-            v-show="menus[filter]" ref="menu" :key="filter">
-      
-            <li v-if="filter === 'rating'" class="filters__rating">
-              <output>
-                <label>Minimum rating:&nbsp;</label>
-                {{ parseFloat(filters.rating).toFixed(1) }}
-              </output>
-      
-              <input v-model="filters.rating" class="filters__range" type="range"
-                :min="rating.min" :max="rating.max" step="0.1"/>
-            </li>
-      
-            <template v-else>
-              <li v-for="(active, option) in options" class="filters__item"
-                :class="{ 'filters__item--active': active }"
-                @click="setFilter(filter, option)">
-                {{ option }}
-              </li>
-            </template>
-          </menu>
-        </transition-group>
-      
-        <transition-group name="company" tag="ul" class="content__list">
-          <li class="company" v-for="company in list" :key="company.id">
-            <div class="company__info">
-              <icon class="company__logo" :style="`fill:${company.color}`" :use="company.logo"></icon>
-              <h2 class="company__name">{{ company.name }}</h2>
-              <blockquote class="company__slogan">{{ company.slogan }}</blockquote>
-            </div>
-      
-            <ul class="company__details">
-              <li class="company__data">
-                <label class="company__label">Country</label>
-                <p class="company__country"
-                  @click="clearFilter('countries', company.country)">
-                  {{ company.country }}
-                </p>
-              </li>
-      
-              <li class="company__data">
-                <label class="company__label">Rating</label>
-                <p class="company__rating">{{ company.rating.toFixed(1) }}</p>
-              </li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./eventos.html">Eventos</a></li>
+                <li><a href="./progEduc.html">Programas</a></li>
+                <!--  <li><a href="#">Registrarse</a></li> -->
             </ul>
-          </li>
-        </transition-group>
+
+            <div class="mobile-menu-icon">
+                <div class="hamburger-menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+<!-- <div class="filtro-bar"></div> -->
+
+<div class="filtro-bar">
+
+  <form id="formulario" action="">
+    <div><div>
+    <select class="filter-select" id="button-programa" name="buttonPrograma" >
+    <option hidden selected value="">Programas</option>
+    <option value="Curso corto">Curso corto</option>
+    <option value="Licenciatura">Licenciaturas</option>
+    <option value="Diplomado">Diplomados</option>
+    <option value="Pregrado">Pregrado</option>
+    <option value="Master">Master</option>
+    <option value="Inglés">Inglés</option>
+    </select>
+    
+    <select class="filter-select" id="button-pais" name="buttonPais"  >
+      <option hidden selected="selected" value="">País</option>
+      <option value="Australia">Australia</option>
+      <option value="Canadá">Canadá</option>
+      <option value="Eslovaquia">Eslovaquia</option>
+      <option value="México">México</option>
+      <option value="Polonia">Polonia</option>
+      <option value="Reino Unido">Reino Unido</option>
+      <option value="Republica Checa">Republica Checa</option>
+      <option value="Estados Unidos">USA</option>
+      <option value="Irlanda">Irlanda</option>
+      </select>  
+
+       
+      <input 
+      class="filter-select button-sin-borde"
+      type="submit"
+      value="Buscar">
+
+      <input id="limpiar"  class="filter-select button-sin-borde" type="button" value="Limpiar"> 
       
-        <transition name="modal">
-          <section v-if="modal" class="modal" @click="modal = false">
-            <article class="modal__content" @click.stop>
-              <h4 class="modal__title">For the full tutorial</h4>
-              <h4 class="modal__title">that goes with this pen</h4>
-      
-              <h5 class="modal__link" @click="modal = false">
-                <a href="https://snipcart.com/blog/vuejs-transitions-animations" target="_blank">
-                  Creating Vue.js Transitions &amp; Animations
-                </a>
-              </h5>
-      
-              <button class="modal__close" @click="modal = false">&times;</button>
-            </article>
-          </section>
-        </transition>
-      </main>
-      <!-- partial -->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js'></script><script  src="./script.js"></script>
-      
+
+
+
+</div></div>
+  </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!--Programas educativos-->
+
+  <section class="eventos">
+    <div class="eventoss">
+  
+    <div class="cards-events">
+    </section>
+
+    <div class="sin-resultados">
+    </div>
+  <!--Fin Programas educativos-->
+
+
+
+
+
+
 
 </body>
-<script src="../JS/nav-bar.js"></script>
-    <script src="../JS/progEduc/filter.js"></script>
+
+<footer>
+    <div class="content-footer">
+      <div class="left-footer box-footer">
+        <div class="upper-footer">
+          <div class="topic-footer"><div class="logo">
+  
+            <img src="../Imagenes/logo-edumark.png" alt="Logo">
+            <p>EDU<span>MARK</span></p>
+    
+          </div></div>
+
+        </div>
+        <div class="lower-footer">
+          <div class="topic-footer contactame">Contactanos</div>
+          <div class="phone">
+            <a href="#"><i class="fas fa-phone-volume"></i>+52 7721514998</a>
+          </div>
+          <div class="email">
+            <a href="#"><i class="fas fa-envelope"></i>abc@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="middle-footer box-footer">
+        <div class="topic-footer">Ubicación</div>
+        <div><a href="#">Queretaro,México</a></div>
+        <div><a href="#">CDMX, México</a></div>
+        <div><a href="#">Hidalgo, México</a></div>
+      </div>
+      <div class="right-footer box-footer">
+        <div class="topic-footer">Síguenos</div>
+        <form action="#">
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>Todos los derechos reservados 2022 ©</p>
+    </div>
+  </footer>
+
+  <script src="../JS/nav-bar.js"></script>
+    <script src="../JS/progEduc/filter.js" type="module" ></script>
 </html>
+
+
+
