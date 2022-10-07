@@ -139,10 +139,8 @@ function informacion(tech){
     //BOTON ME INTERESA
     const removeSpacesFromString = (textoOriginal) => { 
     let text1 = textoOriginal
-  
     let text2 =  
         text1.replace(/ /g, "%20"); 
-  
    return text2
     } 
 
@@ -160,11 +158,14 @@ function informacion(tech){
     contenedorMayorModal.classList.add('hidden')
     buttonCards.appendChild(contenedorMayorModal)
 
-    //CONTENEDOR  MODAL
+    //CONTENEDOR  MODAL  CONTENEDOR  MODAL  CONTENEDOR  MODAL  CONTENEDOR  MODAL  CONTENEDOR  MODAL  CONTENEDOR  MODAL  CONTENEDOR  MODAL   
     const cntr= document.createElement('div')
     cntr.setAttribute('id','modal')
     cntr.classList.add('hidden')
     texto.appendChild(cntr)
+
+
+
 
 
     const tituloDetalles=document.createElement('h3')
@@ -174,27 +175,44 @@ function informacion(tech){
 
 
     
+
+    const contenedorFlex=document.createElement('div')
+    contenedorFlex.classList.add('centrar-detalles-ventana')
+    cntr.appendChild(contenedorFlex)  
+
+
+
+
+
+
+
+    const contenedorTexto=document.createElement('div')
+    contenedorTexto.classList.add('contenedor-texto')
+    contenedorFlex.appendChild(contenedorTexto)  
+    
+
+    
     const nombreBold=document.createElement('a')
     nombreBold.classList.add('nombreBold')
     nombreBold.textContent=('Programa ')
-    cntr.appendChild(nombreBold)
+    contenedorTexto.appendChild(nombreBold)
 
     const textoM= document.createElement('p')
     textoM.classList.add('modal__title')
     textoM.textContent=(tech.programa)
-    cntr.appendChild(textoM)
+    contenedorTexto.appendChild(textoM)
 
 
 
     const nombreBold2=document.createElement('a')
     nombreBold2.classList.add('nombreBold')
     nombreBold2.textContent=('País ')
-    cntr.appendChild(nombreBold2)
+    contenedorTexto.appendChild(nombreBold2)
     
     const textoM2 = document.createElement('p')
     textoM2.classList.add('modal__content')
     textoM2.textContent=(tech.pais)
-    cntr.appendChild(textoM2)
+    contenedorTexto.appendChild(textoM2)
 
 
 
@@ -202,24 +220,24 @@ function informacion(tech){
     const nombreBold3=document.createElement('a')
     nombreBold3.classList.add('nombreBold')
     nombreBold3.textContent=('Ingreso ')
-    cntr.appendChild(nombreBold3)
+    contenedorTexto.appendChild(nombreBold3)
 
     const textoM3 = document.createElement('p')
     textoM3.classList.add('modal__content')
     textoM3.textContent=(tech.ingreso)
-    cntr.appendChild(textoM3)
+    contenedorTexto.appendChild(textoM3)
 
 
 
     const nombreBold6=document.createElement('a')
     nombreBold6.classList.add('nombreBold')
     nombreBold6.textContent=('Precio ')
-    cntr.appendChild(nombreBold6)
+    contenedorTexto.appendChild(nombreBold6)
     
     const textoM6 = document.createElement('p')
     textoM6.classList.add('modal__content')
     textoM6.textContent=(tech.precio)
-    cntr.appendChild(textoM6)
+    contenedorTexto.appendChild(textoM6)
     
 
 
@@ -227,31 +245,38 @@ function informacion(tech){
     const nombreBold7=document.createElement('a')
     nombreBold7.classList.add('nombreBold')
     nombreBold7.textContent=('Nivel de Inglés ')
-    cntr.appendChild(nombreBold7)
+    contenedorTexto.appendChild(nombreBold7)
 
     const textoM7 = document.createElement('p')
     textoM7.classList.add('modal__content')
     textoM7.textContent=(tech.nivelIngles)
-    cntr.appendChild(textoM7)
+    contenedorTexto.appendChild(textoM7)
     
 
 
     const nombreBold5=document.createElement('a')
     nombreBold5.classList.add('nombreBold')
     nombreBold5.textContent=('Beca ')
-    cntr.appendChild(nombreBold5)
+    contenedorTexto.appendChild(nombreBold5)
 
     const textoM5 = document.createElement('p')
     textoM5.classList.add('modal__content')
     textoM5.textContent=(tech.beca)
-    cntr.appendChild(textoM5)
+    contenedorTexto.appendChild(textoM5)
+
+
+    const contenedorImagen=document.createElement('div')
+    contenedorImagen.classList.add('background-detalles')
+    contenedorImagen.style.backgroundImage = tech.imagen;
+    contenedorFlex.appendChild(contenedorImagen) 
+
 
 
 
 
     const nombreBold4=document.createElement('a')
     nombreBold4.classList.add('nombreBold')
-    nombreBold4.textContent=('Perfil ')
+    nombreBold4.textContent=('Perfil')
     cntr.appendChild(nombreBold4)
 
     const textoM4 = document.createElement('p')
@@ -405,7 +430,7 @@ select.addEventListener('change',
     }
 
 
-  function buscador(uno,dos){
+    function buscador(uno,dos){
     var cont=0
     const arrayForeach =programasListado.forEach (function (tech){
     

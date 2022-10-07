@@ -80,7 +80,7 @@ const programasListado = [
     {
         id:7,
         programa: 'Inglés',
-        pais:'República Checa (Praga)',
+        pais:'República Checa',
         descripcion:'Seis meses de inglés con preparación para IELTS, idioma chec y materias básicas.',
         ingreso:'Enero',
         perfil: 'Egresados de bachillerato que desean ingresar a la universidad para inglés intermedio.',
@@ -93,7 +93,7 @@ const programasListado = [
     {
         id:8,
         programa: 'Inglés',
-        pais:'República Checa (Praga)',
+        pais:'República Checa',
         descripcion:'Un mes de alojamiento seguro.',
         ingreso:'Junio/Julio/Agosto',
         perfil: 'Curso de inglés/checo en un mes. Personas que quieran mejorar su nivel.',
@@ -106,7 +106,7 @@ const programasListado = [
     {
         id:9,
         programa: 'Inglés',
-        pais:'República Checa (Praga)',
+        pais:'República Checa',
         descripcion:'Tres meses y alojamiento seguro.',
         ingreso:'Marzo',
         perfil: 'Curso de inglés/checo en tres meses. Personas que quieran mejorar su nivel.',
@@ -327,7 +327,7 @@ const programasListado = [
     {
         id:26,
         programa: 'Foundation',
-        pais:'República Checa (Praga)',
+        pais:'República Checa',
         descripcion:'Diez meses. Inglés, materias básicas de la carrera, preparación y trámite para ingresar a universidades con costo de matrícula a partir de €4000 al año.',
         ingreso:'Septiembre 2022',
         perfil: 'Egresados de bachillerato o grado.',
@@ -340,7 +340,7 @@ const programasListado = [
     {
         id:27,
         programa: 'Foundation (Seis meses)',
-        pais:'República Checa (Praga)',
+        pais:'República Checa',
         descripcion:'Seis meses de Checo o Inglés, materias básicas de la carrera, alojamiento y seguro (si el programa es en Checo, no paga matrícula y si es en inglés, paga desde €3000 al año).',
         ingreso:'Enero',
         perfil: 'Egresados de bachillerato o grado.',
@@ -496,7 +496,7 @@ const programasListado = [
     {
         id:39,
         programa: 'Preuniversitario/ Premaster en Checo',
-        pais:'República Checa (Praga)',
+        pais:'República Checa',
         descripcion:'Diez meses, idioma checo, materias básica de la carrera, preparación y trámite para ingresar a universidades sin costo de matrícula (aplica para programas en idioma Checo).',
         ingreso:'Por confirmar...',
         perfil: 'Para licenciatura, haber concluido preparatoria. Para master, haber concluido licenciatura o ingeniería. Promedio mínimo de 8. Para cualquier área, enfocado al fútbol.',
@@ -509,7 +509,7 @@ const programasListado = [
     {
         id:40,
         programa: 'Inglés',
-        pais:'República Checa (Praga)',
+        pais:'República Checa',
         descripcion:'Seis meses, Inglés para prepación IELTS, idioma Checo y materias básicas de la carrera.',
         ingreso:'Enero',
         perfil: 'Egresados de bachillerato o grados que desean ingresar a la universidades.',
@@ -518,46 +518,7 @@ const programasListado = [
         nivelIngles:'Intermedio',
         razones:'No aplica',
         imagen: `url(${'../Imagenes/students2.jpg'})`
-    },
-    {
-        id:41,
-        programa: 'Grados',
-        pais:'Polonia',
-        descripcion:'Carreras de cuatro años. Costo por año desde €2000 y pagar registro de €750 para aplicaciones.',
-        ingreso:'Enero - Septiembre 2022',
-        perfil: 'Egresados de bachillerato con promedio mínimo de 8.',
-        beca:'No aplica',
-        precio:'€2,000',
-        nivelIngles:'IELTS 7',
-        razones:'No aplica',
-        imagen: `url(${'../Imagenes/students2.jpg'})`
-    },
-    {
-        id:42,
-        programa: 'Master',
-        pais:'Polonia',
-        descripcion:'Carreras de dos años. Costo por año desde €2000 y pagar registro de €750 para aplicaciones.',
-        ingreso:'Enero - Septiembre 2022',
-        perfil: 'Egresados de grado con promedio mínimo de 8.',
-        beca:'No aplica',
-        precio:'€2,000',
-        nivelIngles:'IELTS 7',
-        razones:'No aplica',
-        imagen: `url(${'../Imagenes/students2.jpg'})`
-    },
-    {
-        id:43,
-        programa: 'Inglés',
-        pais:'Polonia',
-        descripcion:'Diez meses de Inglés en universidades. Pagar registro de €750 para aplicaciones.',
-        ingreso:'Enero/Septiembre',
-        perfil: 'Para mejorar nivel de Innglés o certificación del idioma.',
-        beca:'No aplica',
-        precio:'€3,000',
-        nivelIngles:'IELTS 6',
-        razones:'No aplica',
-        imagen: `url(${'../Imagenes/students2.jpg'})`
-    },
+    }
 ]
 
 

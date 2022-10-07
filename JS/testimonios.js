@@ -1,13 +1,13 @@
-const wrapper = document.querySelector('.wrapper-testimonios');
-const indicators = [...document.querySelectorAll('.indicators-testimonios button')];
-
-let currentTestimonial = 0; // Default 0
-
-indicators.forEach((item, i) => {
-    item.addEventListener('click', () => {
-        indicators[currentTestimonial].classList.remove('active-testimonios');
-        wrapper.style.marginLeft = `-${100 * i}%`;
-        item.classList.add('active-testimonios');
-        currentTestimonial = i;
-    })
-})
+$(document).ready(function(){
+  $("#testimonial-slider").owlCarousel({
+      items:3,
+      itemsDesktop:[1000,3],
+      itemsDesktopSmall:[980,2],
+      itemsTablet:[768,2],
+      itemsMobile:[650,1],
+      pagination:true,
+      navigation:false,
+      slideSpeed:1000,
+      autoPlay:true
+  });
+});
