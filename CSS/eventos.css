@@ -654,7 +654,7 @@ input:checked + .slider:before {
 
 
 .background-detalles{
-  min-width: 400px;
+  min-width: 60%;
   height: auto;
   background-size: cover;
   border-radius: 2rem 0 0 2rem;
