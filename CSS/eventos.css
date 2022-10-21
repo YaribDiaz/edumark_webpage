@@ -487,6 +487,7 @@ input:checked + .slider:before {
   .card-button{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
   }
   
   .button-blanco{
@@ -503,6 +504,7 @@ input:checked + .slider:before {
   .button-rojo{
     background: #bf0000;
     color: #ffffff;
+    cursor: pointer;
   }
 
   .button-rojo:hover{
@@ -648,17 +650,18 @@ input:checked + .slider:before {
 .centrar-detalles-ventana{
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-evenly
 }
 
 
 
-.background-detalles{
-  min-width: 60%;
-  height: auto;
+.background-detalles{ 
+  
+  height: 25rem;
+  width: 20rem;
   background-size: cover;
-  border-radius: 2rem 0 0 2rem;
-  padding: 5rem;
+  border-radius: 2rem 2rem;
+  
   box-shadow: 0px 10px 2em hsla(0, 0%, 29%, 0.9);
 }
 
@@ -745,7 +748,7 @@ input:checked + .slider:before {
 }
 
 .tituloModal{
-  font-size:2rem;
+  font-size:2.2rem;
   font-weight: 700;
   text-align: center;
   padding-bottom: 1rem;
@@ -766,10 +769,99 @@ input:checked + .slider:before {
     width:90%;
   }
 }
+
+@media (max-width: 280px) {
+  #modal {
+    width:97%;
+  }
+  p{
+    font-size:1.3rem;
+ 
+  }
+  a{
+    font-size:1.3rem;
+    
+  }
+}
 /*VENTANA DETALLES */
 
 
 
+
+
+
+
+
+
+
+
+/*VENTANA INSCRIBIRME */
+
+.texto-exito{
+  color:rgb(0, 0, 0);
+  font-size: 2rem;
+  padding: 2rem 5rem 0 5rem;
+  display: flex;
+  justify-content: center;
+}
+.icono-exito{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color:rgb(51, 152, 0);
+  padding:2rem 0;
+  --fa-bounce-start-scale-x: 1;
+   --fa-bounce-start-scale-y: 1;
+    --fa-bounce-jump-scale-x: 1; 
+    --fa-bounce-jump-scale-y: 1;
+     --fa-bounce-land-scale-x: 1;
+      --fa-bounce-land-scale-y: 1;
+}
+
+.field-oculto{
+  display:none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  font-size: 1.7rem;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+
+.field input {
+  display: block;
+  min-width: 250px;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #000000;
+}
+
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  width: 100%;
+  font-size: 14px;
+  background-color: #ec9500;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+input[type="submit"]:hover {
+  background-color: #ec0000;
+}
+/*VENTANA INSCRIBIRME */
 
 
 
@@ -816,6 +908,15 @@ ESTADO DE EVENTO
 /*
 ESTADO DE EVENTO
 */
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,9 @@
+const id='1g3mr-QsB2FbP7HVNIho6aAkRrFF0b2HcwI_90y9eD8s'
+const rango='Programas!A:K'
+const claveAPI = 'AIzaSyAj8EroyGMKAfgLOvYrgw8jd2q2RXnDomY';
+const url= `https://sheets.googleapis.com/v4/spreadsheets/${id}/values/${rango}?key=${claveAPI}`  
 
-import programasListado from "./programasEducativos.js";
+
 
 
 //GENERADOR PROGRAMAS
@@ -75,10 +79,6 @@ import programasListado from "./programasEducativos.js";
 
 function informacion(tech){
 
-    
-
-
-
     const container = document.querySelector('.cards-events')
     
     const contenedor = document.createElement('div')
@@ -89,7 +89,7 @@ function informacion(tech){
     const fondo = document.createElement('div')
     fondo.classList.add('background')
     contenedor.appendChild(fondo)
-    fondo.style.backgroundImage = tech.imagen;
+    fondo.style.backgroundImage =`url('${tech.imagen}')`
     
     //CREACION DIV PARA CONTENIDO DE TEXTO
     const texto = document.createElement('div')
@@ -139,9 +139,8 @@ function informacion(tech){
     //BOTON ME INTERESA
     const removeSpacesFromString = (textoOriginal) => { 
     let text1 = textoOriginal
-    let text2 =  
-        text1.replace(/ /g, "%20"); 
-   return text2
+    let text2 =text1.replace(/ /g, "%20"); 
+    return text2
     } 
 
     const buttonInteresado = document.createElement('a')
@@ -267,7 +266,7 @@ function informacion(tech){
 
     const contenedorImagen=document.createElement('div')
     contenedorImagen.classList.add('background-detalles')
-    contenedorImagen.style.backgroundImage = tech.imagen;
+    contenedorImagen.style.backgroundImage =`url('${tech.imagen}')`
     contenedorFlex.appendChild(contenedorImagen) 
 
 
@@ -430,9 +429,57 @@ select.addEventListener('change',
     }
 
 
+
+
+
+
+
     function buscador(uno,dos){
     var cont=0
-    const arrayForeach =programasListado.forEach (function (tech){
+    
+
+
+    fetch(url)
+    .then( (respuesta) => {
+        return respuesta.json()
+    })
+    .then( (infoJson) => {
+        let entries = infoJson.values;
+        let numFilas = entries.length;
+       // console.log('Número de filas: ' + numFilas);
+
+        //Procesamos los datos
+        let campos = [];
+        let datos = [];
+        for(var f=0; f<numFilas; f++) {
+            let fila = entries[f];
+
+            //Recorremos cada fila por columnas
+            //creamos un nuevo objeto
+            let obj = {};
+            for(var c=0; c<fila.length; c++) {
+                let celda = fila[c];
+                if (f == 0){    //Si es la fila 0, son los nombres de los campos
+                    //Anotamos el nombre en la lista de campos
+                    campos.push(celda);
+                }
+                else {  //En las ddemás filas
+                    //Asignamos la propiedad que corresponda según la posición
+                    obj[campos[c]] = celda;
+                }
+            }
+            //Añadimos el nuevo objeto a la colección de datos (si no es la primera fila)
+            if (f > 0) datos.push(obj);
+        }
+      // console.log(datos);
+        
+        return datos;
+    })
+    
+    .then( (resultado) => {
+        let eventos = '';
+        resultado.forEach( tech => {
+
     
       
     if(foco ==true){
@@ -443,7 +490,7 @@ select.addEventListener('change',
         informacion(tech)  
         console.log('hola1')
         cont++
-}
+    }
 if(uno=="" && tech.pais==dos){
     informacion(tech)
     cont++
@@ -457,9 +504,11 @@ if(uno=='' && dos==''){
   cont++
 }
 
-})  
-console.log(cont)
 
+
+
+console.log(cont)    
+}) 
 if(cont==0){
 
   const container = document.querySelector('.eventoss')
@@ -473,6 +522,10 @@ if(cont==0){
   sinResultado.textContent=('Aún no hay programas con estas características')
   contenedorAviso.appendChild(sinResultado)
 }
+
+})
+
+
 }
 
 
