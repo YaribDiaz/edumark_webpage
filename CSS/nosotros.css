@@ -343,9 +343,9 @@ nav.open .hamburger-menu .line:nth-of-type(3) {
     .inner-container{
         padding: 60px;
     }
-    .skills{
-      height: 1rem;
-      width: 50%;
+    .skills img{
+      height: 2rem;
+      width: 100%;
     }
 }
 
