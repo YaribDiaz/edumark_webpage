@@ -1,4 +1,3 @@
-import eventosListado from "./eventosListado.js";
 
 const id='1g3mr-QsB2FbP7HVNIho6aAkRrFF0b2HcwI_90y9eD8s'
 const rango='Eventos!A:H'
