@@ -318,6 +318,7 @@ nav.open .hamburger-menu .line:nth-of-type(3) {
 @media screen and (max-width: 560px) {
   .imagen img{
     height: 23rem;
+     width:100;
     margin-top:8rem;
   }
   .formulario{
