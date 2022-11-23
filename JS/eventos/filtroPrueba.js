@@ -29,15 +29,15 @@ function informacion(tech){
           const opcionFechaCorta = { year: 'numeric', month: 'short', day: 'numeric' };
           const opcionFechaMediana = { year: 'numeric', month: 'short', day: 'numeric' };
           const opcionFechaLarga = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-          var fechaCortaTransf=(fechaEvento.toLocaleDateString('es-mx', opcionFechaCorta));
+          var fechaCortaTransf=(fechaEvento.toLocaleDateString('en-GB', opcionFechaCorta));
           const fechaCortaRmveSpace = (textoOriginal) => { 
             let text1 = textoOriginal
             let text2 =text1.replace(/ /g, "/"); 
             return text2
             } 
           var fechaCorta=(fechaCortaRmveSpace(fechaCortaTransf))
-          var fechaLarga=(fechaEvento.toLocaleDateString(undefined, opcionFechaLarga));
-          var fechaMediana=(fechaEvento.toLocaleDateString(undefined, opcionFechaMediana))
+          var fechaLarga=(fechaEvento.toLocaleDateString('en-GB', opcionFechaLarga));
+          var fechaMediana=(fechaEvento.toLocaleDateString('en-GB', opcionFechaMediana))
   //fin fechas
 
 
