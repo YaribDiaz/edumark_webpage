@@ -36,8 +36,8 @@ function informacion(tech){
             return text2
             } 
           var fechaCorta=(fechaCortaRmveSpace(fechaCortaTransf))
-          var fechaLarga=(fechaEvento.toLocaleDateString('es-mx', opcionFechaLarga));
-          var fechaMediana=(fechaEvento.toLocaleDateString('es-mx', opcionFechaMediana))
+          var fechaLarga=(fechaEvento.toLocaleDateString(undefined, opcionFechaLarga));
+          var fechaMediana=(fechaEvento.toLocaleDateString(undefined, opcionFechaMediana))
   //fin fechas
 
 
