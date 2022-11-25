@@ -861,6 +861,7 @@ footer a:hover {
 
 .similar-wrapper::-webkit-scrollbar {
   height: 10px;
+  
 }
 
 .similar-wrapper::-webkit-scrollbar-track {
@@ -874,34 +875,13 @@ footer a:hover {
 .similar-wrapper::-webkit-scrollbar-thumb {
   background: rgb(255, 255, 255);
   border-radius: 2rem;
-  
+  margin-top: 2rem;
 }
 .similar-wrapper::-webkit-scrollbar-thumb:hover {
   background: rgb(217, 96, 10);
 }
 
-@media screen and (max-width: 768px) {
-  .product-container {
-    width: 25rem;
-    height: 15rem;
-  }
-  .product-container p{
-    width: 25rem;
-    height: auto;
-    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
-    font-size: 80%;
-  }
-  .nueva-categoria::before {
-    position: absolute;
-    /* margin-bottom: 22rem; */
-    top:12%;
 
-    font-size: 60%;
-
-    padding: 0.5rem 1rem 0.5rem 1.3rem;
-
-  }
-}
 
 
 
