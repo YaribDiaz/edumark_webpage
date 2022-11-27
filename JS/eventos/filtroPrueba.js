@@ -211,7 +211,7 @@ function informacion(tech){
             }else{
 
             var top = document.getElementById("button-cards");
-            var garbage = top.removeChild(nested);
+          
           }
         }
 
